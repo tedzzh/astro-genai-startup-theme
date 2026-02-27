@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap, Brain, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, ShieldCheck } from "lucide-react";
+import { withBase } from "@/lib/utils";
 
 export function Hero() {
   return (
@@ -51,18 +52,20 @@ export function Hero() {
           </motion.p>
 
           {/* 按钮 */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="group">
-              立即预约服务
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button asChild size="lg" className="group">
+              <a href={withBase("/contact")}>
+                立即预约服务
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline">
-              了解服务范畴
+            <Button asChild size="lg" variant="outline">
+              <a href={withBase("/#features")}>了解服务范畴</a>
             </Button>
           </motion.div>
 

@@ -8,34 +8,34 @@ import {
 
 const faqs = [
   {
-    question: "What AI models do you support?",
+    question: "维修流程是怎样的？",
     answer:
-      "We support a wide range of state-of-the-art AI models including GPT-4, Claude, Llama, and custom fine-tuned models. Our platform is model-agnostic and continuously updated with the latest releases.",
+      "您可通过网站或电话预约，我们安排检测时间；检测后给出书面报价，您确认后再进行维修；维修完成后试机交付，并提供质保与单据。",
   },
   {
-    question: "How is pricing calculated?",
+    question: "如何收费？有没有检测费？",
     answer:
-      "Pricing is based on the number of API requests and the complexity of the AI models used. We offer transparent, pay-as-you-go pricing with no hidden fees. You can upgrade or downgrade your plan at any time.",
+      "先沟通再检测，检测后报价，您同意后才施工，不修不收费。具体检测是否收费视设备与距离而定，沟通时会说明。维修费按项目与配件单独报价，透明无隐藏费用。",
   },
   {
-    question: "Is my data secure?",
+    question: "维修周期大概多久？",
     answer:
-      "Absolutely. We use bank-level encryption (AES-256) for data at rest and in transit. We're SOC 2 Type II certified and compliant with GDPR, HIPAA, and other major data protection regulations. Your data is never used to train models without explicit consent.",
+      "常见故障一般 3～7 个工作日；需订货或芯片级维修的复杂情况会提前告知预估时间。加急需求可沟通，视排期与难度可能加收加急费。",
   },
   {
-    question: "Can I use this for commercial projects?",
+    question: "保修多久？返修怎么算？",
     answer:
-      "Yes! All our plans, including the free tier, can be used for commercial projects. We encourage you to build and ship products using our platform. Enterprise plans offer additional features for large-scale deployments.",
+      "维修件质保一般 3～6 个月（具体以报价单为准）。质保期内同一故障免费返修；人为或其它故障按新单处理。",
   },
   {
-    question: "What kind of support do you offer?",
+    question: "支持上门吗？外地怎么送修？",
     answer:
-      "Free plans include community support and comprehensive documentation. Pro plans get priority email support with 24-hour response times. Enterprise customers receive 24/7 dedicated support with a dedicated account manager and custom SLAs.",
+      "本地可上门检测与取送（具体范围与费用沟通时说明）。外地客户可快递寄修，我们收到后检测报价，您确认后维修再寄回，运费按实际产生计算。",
   },
   {
-    question: "Do you offer a free trial?",
+    question: "工控、无人机、脚本开发都接吗？",
     answer:
-      "Yes! We offer a generous free tier that includes 1,000 API requests per month. Pro and Enterprise plans come with a 14-day free trial with no credit card required. You can cancel anytime.",
+      "接。计算机芯片级维修、工控设备、无人机、软件脚本开发、网络设计维护都在服务范围内；特斯拉相关业务正在进修中，后续会开放。具体可先发设备型号或需求，我们评估后回复。",
   },
 ];
 
@@ -51,9 +51,9 @@ export function FAQ() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold"
           >
-            Frequently asked{" "}
+            常见
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-              questions
+              问题
             </span>
           </motion.h2>
           <motion.p
@@ -63,7 +63,7 @@ export function FAQ() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Everything you need to know about our platform
+            关于维修流程、价格与保修，您可能想了解的都在这里
           </motion.p>
         </div>
 

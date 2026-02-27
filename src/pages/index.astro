@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/main.astro';
 import { Hero } from '@/components/Hero';
+import { Manifesto } from '@/components/Manifesto';
 import { Features } from '@/components/Features';
+import { RepairProcess } from '@/components/RepairProcess';
 import { Pricing } from '@/components/Pricing';
 import { Testimonials } from '@/components/Testimonials';
 import { FAQ } from '@/components/FAQ';
@@ -9,7 +11,9 @@ import { FAQ } from '@/components/FAQ';
 
 <Layout>
 	<Hero client:load />
+	<Manifesto client:load />
 	<Features client:load />
+	<RepairProcess client:load />
 	<Testimonials client:load />
 	<Pricing client:load />
 	<FAQ client:load />

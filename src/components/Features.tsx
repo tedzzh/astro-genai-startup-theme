@@ -1,55 +1,58 @@
 import { motion } from "framer-motion";
 import {
-  Brain,
-  Zap,
-  Shield,
+  Cpu,
+  Factory,
+  Plane,
   Code,
-  Globe,
-  Sparkles,
+  Network,
+  Car,
 } from "lucide-react";
+import { withBase } from "@/lib/utils";
+
+const PLACEHOLDER_IMG = "/images/placeholder.svg";
 
 const features = [
   {
-    icon: Brain,
-    title: "Advanced AI Models",
-    description:
-      "Access state-of-the-art language models and neural networks for your applications.",
+    icon: Cpu,
+    title: "计算机芯片级维修",
+    description: "主板、显卡、笔记本等芯片级诊断与维修，BGA 焊接与更换，数据恢复。",
     gradient: "from-purple-500 to-pink-500",
+    image: "/images/service-chip.jpg",
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description:
-      "Optimized infrastructure ensures your AI queries are processed in milliseconds.",
+    icon: Factory,
+    title: "工控设备维修",
+    description: "PLC、变频器、触摸屏、工业电脑等工控设备故障诊断与维修。",
     gradient: "from-yellow-500 to-orange-500",
+    image: "/images/service-industrial.jpg",
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description:
-      "Bank-level encryption and compliance with SOC 2, GDPR, and HIPAA standards.",
+    icon: Plane,
+    title: "无人机维修",
+    description: "消费级与行业级无人机飞控、图传、云台及整机检测与维修。",
     gradient: "from-green-500 to-emerald-500",
+    image: "/images/service-drone.jpg",
   },
   {
     icon: Code,
-    title: "Developer First",
-    description:
-      "Clean APIs, comprehensive docs, and SDKs in your favorite programming languages.",
+    title: "软件脚本开发",
+    description: "自动化脚本、小工具开发，办公与运维流程定制，提高效率。",
     gradient: "from-blue-500 to-cyan-500",
+    image: "/images/service-script.jpg",
   },
   {
-    icon: Globe,
-    title: "Global Scale",
-    description:
-      "Deploy worldwide with edge locations across 6 continents for minimal latency.",
+    icon: Network,
+    title: "网络设计维护",
+    description: "局域网与弱电设计、布线、路由器与交换机配置及故障排查。",
     gradient: "from-indigo-500 to-purple-500",
+    image: "/images/service-network.jpg",
   },
   {
-    icon: Sparkles,
-    title: "Auto-Optimization",
-    description:
-      "Smart caching and model selection automatically optimize for cost and performance.",
+    icon: Car,
+    title: "特斯拉相关",
+    description: "特斯拉车辆电子与相关设备进修中，后续将提供专项服务。",
     gradient: "from-pink-500 to-rose-500",
+    image: "/images/service-tesla.jpg",
   },
 ];
 
@@ -80,9 +83,9 @@ export function Features() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold"
           >
-            Everything you need to{" "}
+            专业
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-              build with AI
+              服务项目
             </span>
           </motion.h2>
           <motion.p
@@ -92,7 +95,7 @@ export function Features() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Powerful features designed to help you ship AI-powered products faster
+            芯片级维修、工控、无人机、脚本与网络，一站式专业服务
           </motion.p>
         </div>
 
@@ -111,6 +114,17 @@ export function Features() {
                 variants={item}
                 className="group relative p-6 rounded-2xl border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
+                {/* 占位图：将图片放到 public/images/ 对应文件名即可替换；缺失时显示占位 */}
+                <div className="aspect-video rounded-xl bg-muted mb-4 overflow-hidden">
+                  <img
+                    src={withBase(feature.image)}
+                    alt=""
+                    className="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = withBase(PLACEHOLDER_IMG);
+                    }}
+                  />
+                </div>
                 <div
                   className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} mb-4`}
                 >

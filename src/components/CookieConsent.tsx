@@ -64,19 +64,17 @@ export function CookieConsent() {
 
                 <div className="flex-1 space-y-2">
                   <h3 className="text-lg font-semibold">
-                    We value your privacy
+                    我们重视您的隐私
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We use cookies to enhance your browsing experience, serve
-                    personalized content, and analyze our traffic. By clicking
-                    "Accept All", you consent to our use of cookies. Read our{" "}
+                    我们使用 Cookie 以提升浏览体验与网站功能。点击「全部接受」即表示您同意我们使用 Cookie。详见
                     <a
                       href={withBase("/privacy#cookies")}
                       className="text-primary hover:underline"
                     >
-                      Cookie Policy
+                      Cookie 说明
                     </a>
-                    .
+                    。
                   </p>
                 </div>
 
@@ -87,13 +85,13 @@ export function CookieConsent() {
                     onClick={() => setShowPreferences(true)}
                   >
                     <Settings className="h-4 w-4 mr-2" />
-                    Customize
+                    自定义
                   </Button>
                   <Button variant="outline" size="sm" onClick={handleReject}>
-                    Reject
+                    拒绝
                   </Button>
                   <Button size="sm" onClick={handleAcceptAll}>
-                    Accept All
+                    全部接受
                   </Button>
                 </div>
               </div>
@@ -102,7 +100,7 @@ export function CookieConsent() {
             // Preferences Panel
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold">Cookie Preferences</h3>
+                <h3 className="text-lg font-semibold">Cookie 偏好</h3>
                 <button
                   onClick={() => setShowPreferences(false)}
                   className="rounded-md p-2 hover:bg-accent transition-colors"
@@ -116,14 +114,13 @@ export function CookieConsent() {
                 <div className="flex items-start justify-between gap-4 pb-4 border-b">
                   <div className="flex-1">
                     <div className="font-medium mb-1">
-                      Necessary Cookies
+                      必要 Cookie
                       <span className="ml-2 text-xs text-muted-foreground">
-                        (Always active)
+                        （始终启用）
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      Essential for the website to function properly. Cannot be
-                      disabled.
+                      网站运行所必需，无法关闭。
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -136,9 +133,9 @@ export function CookieConsent() {
                 {/* Analytics Cookies */}
                 <div className="flex items-start justify-between gap-4 pb-4 border-b">
                   <div className="flex-1">
-                    <div className="font-medium mb-1">Analytics Cookies</div>
+                    <div className="font-medium mb-1">分析 Cookie</div>
                     <p className="text-sm text-muted-foreground">
-                      Help us understand how visitors interact with our website.
+                      帮助我们了解访客如何使用本站。
                     </p>
                   </div>
                   <button
@@ -167,9 +164,9 @@ export function CookieConsent() {
                 {/* Marketing Cookies */}
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <div className="font-medium mb-1">Marketing Cookies</div>
+                    <div className="font-medium mb-1">营销 Cookie</div>
                     <p className="text-sm text-muted-foreground">
-                      Used to deliver personalized advertisements relevant to you.
+                      用于提供与您相关的个性化内容或广告。
                     </p>
                   </div>
                   <button
@@ -202,10 +199,10 @@ export function CookieConsent() {
                   className="flex-1"
                   onClick={() => setShowPreferences(false)}
                 >
-                  Cancel
+                  取消
                 </Button>
                 <Button className="flex-1" onClick={handleSavePreferences}>
-                  Save Preferences
+                  保存偏好
                 </Button>
               </div>
             </div>

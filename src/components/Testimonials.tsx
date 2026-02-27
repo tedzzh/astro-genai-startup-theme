@@ -1,29 +1,30 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { withBase } from "@/lib/utils";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CTO at TechCorp",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    name: "张先生",
+    role: "某制造企业设备主管",
+    image: "/images/avatar-1.jpg",
     content:
-      "This platform transformed how we integrate AI into our products. The API is incredibly easy to use and the performance is outstanding.",
+      "厂里几台工控机坏了找不到人修，找到浙里修后检测报价很快，修好用了大半年没再出问题，靠谱。",
     rating: 5,
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Founder at StartupXYZ",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+    name: "李女士",
+    role: "工作室主理人",
+    image: "/images/avatar-2.jpg",
     content:
-      "We've tried several AI platforms, but this one stands out for its reliability and developer experience. Highly recommended!",
+      "笔记本主板进水，问了几家都说要换板，这边做了芯片级维修，价格合理，数据也保住了，很满意。",
     rating: 5,
   },
   {
-    name: "Emily Watson",
-    role: "Product Manager at InnovateLabs",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
+    name: "王工",
+    role: "无人机从业者",
+    image: "/images/avatar-3.jpg",
     content:
-      "The support team is fantastic and the documentation is comprehensive. We were able to integrate AI features in days, not weeks.",
+      "飞控和图传问题在这边修的，沟通专业，维修利索，以后有活还会找浙里修。",
     rating: 5,
   },
 ];
@@ -40,9 +41,9 @@ export function Testimonials() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold"
           >
-            Loved by{" "}
+            客户
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-              developers
+              评价
             </span>
           </motion.h2>
           <motion.p
@@ -52,7 +53,7 @@ export function Testimonials() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            See what our customers are saying about us
+            真实反馈，感谢每一位客户的信任
           </motion.p>
         </div>
 
@@ -78,10 +79,11 @@ export function Testimonials() {
                 "{testimonial.content}"
               </p>
               <div className="flex items-center gap-3">
+                {/* 占位符：替换 public/images/avatar-1.jpg 等 */}
                 <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="h-12 w-12 rounded-full"
+                  src={withBase(testimonial.image)}
+                  alt=""
+                  className="h-12 w-12 rounded-full bg-muted object-cover"
                 />
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>

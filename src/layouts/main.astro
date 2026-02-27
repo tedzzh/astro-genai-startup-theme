@@ -4,14 +4,14 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CommandPalette } from '@/components/CommandPalette';
 import { CookieConsent } from '@/components/CookieConsent';
-const { title = "GenAI - Build the Future with AI" } = Astro.props;
+const { title = "浙里修 · 芯片级维修工作室", description = "计算机芯片级维修、工控设备维修、无人机维修、脚本开发、网络设计维护。专业、透明、可靠。" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="A modern, free Astro theme template for GenAI startups with dark/light mode toggle" />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>

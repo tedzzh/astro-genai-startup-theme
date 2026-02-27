@@ -19,56 +19,32 @@ export function CommandPalette() {
   const commands: CommandItem[] = [
     {
       id: "home",
-      title: "Home",
-      description: "Go to homepage",
+      title: "首页",
+      description: "返回首页",
       icon: Home,
       action: () => window.location.href = withBase("/"),
-      category: "Navigation",
-    },
-    {
-      id: "components",
-      title: "Components",
-      description: "View component library",
-      icon: FileText,
-      action: () => window.location.href = withBase("/components"),
-      category: "Navigation",
+      category: "导航",
     },
     {
       id: "blog",
-      title: "Blog",
-      description: "Read our blog",
+      title: "动态",
+      description: "查看动态",
       icon: FileText,
       action: () => window.location.href = withBase("/blog"),
-      category: "Navigation",
+      category: "导航",
     },
     {
       id: "contact",
-      title: "Contact",
-      description: "Get in touch",
+      title: "联系我们",
+      description: "预约与咨询",
       icon: Mail,
       action: () => window.location.href = withBase("/contact"),
-      category: "Navigation",
-    },
-    {
-      id: "changelog",
-      title: "Changelog",
-      description: "See what's new",
-      icon: FileText,
-      action: () => window.location.href = withBase("/changelog"),
-      category: "Navigation",
-    },
-    {
-      id: "dashboard",
-      title: "Dashboard",
-      description: "View dashboard demo",
-      icon: Settings,
-      action: () => window.location.href = withBase("/dashboard"),
-      category: "Navigation",
+      category: "导航",
     },
     {
       id: "toggle-theme",
-      title: "Toggle Theme",
-      description: "Switch between light and dark mode",
+      title: "切换主题",
+      description: "浅色 / 深色模式",
       icon: Sun,
       action: () => {
         document.documentElement.classList.toggle("dark");
@@ -77,7 +53,7 @@ export function CommandPalette() {
           document.documentElement.classList.contains("dark") ? "dark" : "light"
         );
       },
-      category: "Actions",
+      category: "操作",
     },
   ];
 
@@ -162,7 +138,7 @@ export function CommandPalette() {
           <Search className="h-5 w-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Type a command or search..."
+            placeholder="输入命令或搜索…"
             className="flex-1 bg-transparent outline-none text-sm"
             value={search}
             onChange={(e) => {
@@ -180,7 +156,7 @@ export function CommandPalette() {
         <div className="max-h-96 overflow-y-auto p-2">
           {Object.entries(groupedCommands).length === 0 ? (
             <div className="py-12 text-center text-sm text-muted-foreground">
-              No results found.
+              未找到结果。
             </div>
           ) : (
             Object.entries(groupedCommands).map(([category, items]) => (
@@ -233,13 +209,13 @@ export function CommandPalette() {
               <kbd className="inline-flex h-5 select-none items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px]">
                 ↑↓
               </kbd>
-              Navigate
+              切换
             </span>
             <span className="flex items-center gap-1">
               <kbd className="inline-flex h-5 select-none items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px]">
                 ↵
               </kbd>
-              Select
+              确认
             </span>
           </div>
           <div className="flex items-center gap-1">
@@ -267,7 +243,7 @@ export function CommandPaletteHint() {
       }}
     >
       <Search className="h-3.5 w-3.5" />
-      <span className="hidden sm:inline">Quick search</span>
+      <span className="hidden sm:inline">快速搜索</span>
       <kbd className="hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium">
         <Command className="h-2.5 w-2.5" />K
       </kbd>

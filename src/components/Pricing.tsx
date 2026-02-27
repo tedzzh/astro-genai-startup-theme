@@ -1,53 +1,46 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
+import { withBase } from "@/lib/utils";
 
 const plans = [
   {
-    name: "Free",
-    price: "$0",
-    description: "Perfect for getting started and testing",
+    name: "检测报价",
+    price: "面议",
+    description: "故障检测与报价，确定维修方案与费用后再施工",
     features: [
-      "1,000 API requests/month",
-      "Basic AI models",
-      "Community support",
-      "Standard documentation",
-      "99% uptime SLA",
+      "免费初步沟通",
+      "上门/到店检测",
+      "书面报价单",
+      "原厂或优质配件",
     ],
-    cta: "Get Started",
+    cta: "预约检测",
     highlighted: false,
   },
   {
-    name: "Pro",
-    price: "$49",
-    description: "For growing teams and production apps",
+    name: "标准维修",
+    price: "按件计费",
+    description: "常见设备维修，透明报价，质保期内免费返修",
     features: [
-      "100,000 API requests/month",
-      "Advanced AI models",
-      "Priority support",
-      "Advanced analytics",
-      "99.9% uptime SLA",
-      "Custom model fine-tuning",
-      "Team collaboration tools",
+      "芯片级维修与更换",
+      "工控/无人机/电脑",
+      "质保 3～6 个月",
+      "维修报告与单据",
     ],
-    cta: "Start Free Trial",
+    cta: "立即预约",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large-scale deployments",
+    name: "企业合作",
+    price: "定制",
+    description: "批量设备、长期维保、驻场或包年服务",
     features: [
-      "Unlimited API requests",
-      "All AI models + custom models",
-      "24/7 dedicated support",
-      "Advanced security & compliance",
-      "99.99% uptime SLA",
-      "On-premise deployment option",
-      "Custom integrations",
-      "Dedicated account manager",
+      "专属对接人",
+      "优先排期",
+      "协议价与账期",
+      "定期巡检与报告",
     ],
-    cta: "Contact Sales",
+    cta: "联系洽谈",
     highlighted: false,
   },
 ];
@@ -64,9 +57,9 @@ export function Pricing() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold"
           >
-            Simple, transparent{" "}
+            透明
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-              pricing
+              价格咨询
             </span>
           </motion.h2>
           <motion.p
@@ -76,7 +69,7 @@ export function Pricing() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Choose the plan that's right for you. Always know what you'll pay.
+            先检测后报价，不修不收费，价格透明无套路
           </motion.p>
         </div>
 
@@ -98,7 +91,7 @@ export function Pricing() {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1 text-xs font-semibold text-white">
                     <Sparkles className="h-3 w-3" />
-                    Most Popular
+                    推荐
                   </div>
                 </div>
               )}
@@ -110,16 +103,14 @@ export function Pricing() {
                 </p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.price !== "Custom" && (
-                    <span className="text-muted-foreground">/month</span>
-                  )}
                 </div>
 
                 <Button
+                  asChild
                   className="w-full"
                   variant={plan.highlighted ? "default" : "outline"}
                 >
-                  {plan.cta}
+                  <a href={withBase("/contact")}>{plan.cta}</a>
                 </Button>
 
                 <div className="pt-4 space-y-3">
