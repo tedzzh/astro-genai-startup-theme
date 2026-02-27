@@ -8,7 +8,6 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 	<section class="py-20 md:py-32">
 		<div class="container mx-auto px-4">
 			<div class="max-w-5xl mx-auto">
-				<!-- 工作室简介：放在最上方，作为一级信息 -->
 				<div class="text-center space-y-4 mb-8">
 					<h1 class="text-4xl md:text-6xl font-bold">
 						浙里修
@@ -30,7 +29,6 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 					</p>
 				</div>
 
-				<!-- 联系我们：与工作室简介同级风格，放在下方 -->
 				<div class="text-center space-y-3 mb-10">
 					<h2 class="text-3xl md:text-4xl font-bold">
 						联系
@@ -44,11 +42,18 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 				</div>
 
 				<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-					<!-- 联系表单 -->
 					<div class="lg:col-span-2">
 						<div class="p-8 rounded-2xl border bg-card">
 							<h2 class="text-2xl font-bold mb-6">发送消息</h2>
-							<form class="space-y-6">
+							
+							<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+								<input type="hidden" name="access_key" value="6e1aedd9-3727-48e7-9249-49f0a16f1e37">
+								
+								<input type="hidden" name="from_name" value="浙里修官网留言系统">
+								<input type="hidden" name="subject" value="收到新的维修咨询/预约">
+								
+								<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
 								<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
 										<label for="name" class="block text-sm font-medium mb-2">
@@ -88,6 +93,7 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 										name="phone"
 										class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 										placeholder="方便我们联系您"
+										required
 									/>
 								</div>
 
@@ -97,8 +103,8 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 									</label>
 									<input
 										type="text"
-										id="subject"
-										name="subject"
+										id="form_subject"
+										name="customer_subject"
 										class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 										placeholder="例如：笔记本主板维修、工控机检测"
 										required
@@ -130,14 +136,13 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 						</div>
 					</div>
 
-					<!-- 联系信息（占位符：请替换为你的真实信息） -->
 					<div class="space-y-6">
 						<div class="p-6 rounded-2xl border bg-card">
 							<div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 mb-4">
 								<Mail class="h-6 w-6 text-white" />
 							</div>
 							<h3 class="text-lg font-semibold mb-2">邮箱</h3>
-							<p class="text-muted-foreground">ted.zhangxiao@163.com</p>
+							<p class="text-muted-foreground">ted.zhangxiao@gmail.com</p>
 						</div>
 
 						<div class="p-6 rounded-2xl border bg-card">
